@@ -1,0 +1,451 @@
+/* ================================= 
+  Base Element Styles
+==================================== */
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+}
+
+ul {
+  list-style: none;
+  }
+  
+a {
+  text-decoration: none;
+}
+
+button {
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Caveat', cursive;
+  margin-bottom: 1rem;
+}
+
+legend {
+  font-family: 'Caveat', cursive;
+}
+
+img {
+  max-width: 100%;
+}
+
+fieldset {
+  border: none;
+}
+
+/* ================================= 
+  Base Layout Styles
+==================================== */
+
+/* ---- Common Styles ---- */
+.form-input {
+  margin: 0.5rem 0;
+  padding: 10px 15px;
+  border: none;
+}
+
+.form-input::placeholder {
+  color: #B6B9C6;
+}
+
+.accent-btn {
+  position: relative;
+  padding: 10px 15px;
+  background: #DE82C5;
+  color: #FFF;
+  font-weight: 600;
+  border-radius: 2px;
+  transition: 0.5s all ease;
+}
+
+.accent-btn:hover {
+  background: #fff;
+  color: #DE82C5;
+  transition: 0.5s all ease;
+  box-shadow: 0 0 2px 2px #DE82C5 inset;
+}
+
+.accent-btn:active {
+  top: 2px;
+}
+
+.d-flex {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.wrapper {
+	width: 85%;
+	max-width: 1400px;
+	margin: 0 auto;
+}
+
+.main-header {
+	background-color:#4B467C;
+}
+
+.main-content {
+  background: #f6f6f6 url('img/cat_bg.svg');
+  /* paralax effect */
+  background-attachment: fixed;
+  background-position: center;
+  padding-bottom: 2rem;
+}
+
+/* Logo */
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.logo-icon {
+  width: 80px;
+  height: 60px;
+  fill: #fff;
+}
+
+.logo-heading {
+  font-family: 'Caveat', cursive;
+  color: #ffffff;
+}
+
+/* Navigation */
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.nav-link {
+  padding: 10px 15px;
+  font-family: 'Caveat', cursive;
+  font-size: 1.4rem;
+  color: #fff;
+  z-index: 1;
+}
+
+.nav-link:hover {
+  color: #DE82C5;
+}
+
+.nav-link--accent {
+  position: relative;
+  display: flex;
+  width: 235px;
+  padding-left: 65px;
+  margin: 0 20px;
+  text-align: center;
+}
+
+.icon-puppy {
+  position: absolute;
+  width: 100px;
+  left: 0;
+  top: -30px;
+}
+
+.icon-menu {
+  display: none;
+  width: 30px;
+  height: 30px;
+  fill: #fff;
+  cursor: pointer;
+}
+
+/* Banner */
+.banner {
+  background-color: #f6f6f6;
+}
+
+.banner-item {
+  flex: 1 0 50%;
+}
+
+.banner-content {
+  text-align: center;
+}
+
+.banner-heading {
+  max-width: 600px;
+  font-size: 2.5rem;
+  color: #4B467C;
+}
+
+.banner-deco {
+  fill: #C5C7D6;
+}
+
+/* Search */
+.search-heading {
+  color: #8A66AD;
+  font-size: 1.5rem;
+}
+
+.gallery_img1 {
+  max-width: 75%;
+}
+
+.gallery_img2 {
+  max-width: 20%;
+}
+
+/* Section */
+.section-heading {
+  text-align: center;
+  font-size: 2rem;
+  color: #4B467C;
+}
+
+.section-container{
+  padding: 2rem 0;
+}
+
+/* Adoption section */
+.row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.col {
+  flex: 1 0 320px;
+  max-width: 400px;
+  padding: 0 1rem;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.col-heading {
+  text-align: center;
+  font-size: 1.5rem;
+  
+}
+
+.col-content {
+  line-height: 1.6;
+  color: #84868e;
+}
+
+#adoption {
+  background: #fff;
+}
+
+#adoption .col-heading {
+  color: #8A66AD;
+}
+
+/* Pets section */
+.profile {
+  flex: 1 1 400px;
+  max-width: 600px;
+  margin: 1rem;
+  text-align: center;
+}
+
+.profile-img {
+  position: relative;
+  max-width: 80%;
+  width: 400px;
+  height: 245px;
+  padding: 10px;
+  margin: 0 auto -115px;
+  border: 2px solid #C5C7D6;
+  object-fit: cover;
+}
+
+.profile-caption {
+  padding: 125px 30px 30px;
+  background-color: #fff;
+}
+
+.profile-heading {
+  font-size: 1.5rem;
+  color: #4B467C;
+}
+
+.profile-txt {
+  color: #84868e;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin-bottom: 1.2rem;
+}
+
+.profile-btn {
+  padding: 10px 15px;
+  background: #4B467C;
+  color: #FFF;
+  font-weight: 600;
+}
+
+/* New profile */
+.new-profile-form {
+  background: #4B467C;
+  padding: 40px;
+  max-width: 800px;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.new-profile-input {
+  background-color: rgba(255, 255, 255, 0.4);
+  border: none;
+  padding: 8px 15px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.new-profile-input::placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.input-wrapper {
+  display: flex;
+  justify-content: space-around;
+}
+
+.radio-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.new-profile-radio {
+  margin-bottom: 8px;
+}
+
+
+.new-profile-textarea {
+  width: 100%;
+}
+
+
+/* Footer */
+.main-footer {
+  color: #C5C7D6;
+  background-color: #4B467C;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0;
+  color: #C5C7D6;
+  font-style: normal;
+}
+
+.contact-tel{
+  display: block;
+  color: inherit;
+}
+
+.contact-icon {
+  fill: #DE82C5;
+  width: 32px;
+  height: 32px;
+  margin-right: 1rem;
+}
+
+/* Social */
+.social-link-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+.social-link .icon {
+  width: 50px;
+  height: 50px;
+  fill: #DE82C5;
+}
+
+.copyright {
+  display: block;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+/* ************
+MEDIA QUERY 
+**************/
+
+@media (max-width: 1200px) {
+  .wrapper {
+    width: 90%;
+  }
+  
+  .icon-menu {
+    display: block;
+  }
+  
+  .nav-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: -100%;
+    background-color:rgba(75, 70, 124, 0.8);
+    transition: 0.5s all ease-in-out;
+    opacity: 0;
+  }
+
+  .nav-wrapper.open{
+    top: 60px;
+    opacity: 1;
+    transition: 0.5s all ease-in-out;
+  }
+
+  .nav-link{
+    border-top: 1px solid rgba(255,255,255,0.3);
+  }
+
+  .create-new-form {
+    padding: 10px;
+  }
+}
+
+@media (max-width : 600px) {
+  .profile {
+    margin: 1rem 0;
+  }
+
+  .new-profile-input {
+      width: 100%;
+  }
+
+  .new-profile-form {
+      padding: 20px;
+  }
+}
+
+/****** Animate css *****/
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.zoomIn {
+  animation-duration: 1s;
+  animation-name: zoomIn;
+}
