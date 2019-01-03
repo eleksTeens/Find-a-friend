@@ -11,47 +11,77 @@ const form = document.querySelector('.new-profile-form');
 const profileList = document.getElementById('profile-list');
 const data = JSON.parse(localStorage.getItem('data')) || [];
 
-form.addEventListener('submit', addProfile);
+form.addEventListener('submit', onSubmit);
 
-function addProfile(e) {
+function onSubmit(e) {
 	e.preventDefault();
 	const formVal = getFormVal();
 
-	data.push(formVal);
-	populateList(data, profileList);
-	localStorage.setItem('data', JSON.stringify(data));
+	const file = form.elements.img.files[0];
+	getBase64(file).then(
+    imgBase64 => addProfile(formVal, data, imgBase64),
+    error => console.error("Rejected: " + error)
+  );
+	
 	this.reset();
 }
 
+function addProfile(formVal, data, img) {
+	formVal.img = img;
+	data.push(formVal);
+	populateList(data, profileList);
+	localStorage.setItem('data', JSON.stringify(data));
+}
+
 function getFormVal() {
-	const data = {};
+	const profile = {};
 	
 	// Loop through each field in the form
 	for (var i = 0; i < form.elements.length; i++) {
 		var field = form.elements[i];
 
 		if (field.type !== 'submit') {
-			data[form.elements[i].name] = form.elements[i].value;
+			profile[form.elements[i].name] = form.elements[i].value;
 		}
 	}
-	return data;
+	return profile;
 }
 
+
 function populateList(data = [], profileList) {
-	profileList.innerHTML = data.map(profile => createTemplate(profile)).join('');
+	data.forEach(profile => {
+		const el = createTemplate(profile);
+		profileList.appendChild(el);
+	});
 }
 
 function createTemplate(profile) {
-	return `<figure class="profile">
-							<img class="profile-img" src="${profile.img}" alt="тварина">
-							<figcaption class="profile-caption">
-									<h5 class="profile-heading">${profile.name}</h5>
-									<p class="profile-txt">
-											Порода- ${profile.breed}. 
-											Вік- ${profile.age} років. 
-											Контактна персона - ${profile.petOwnerName}. 
-											${profile.description}
-									</p>
-							</figcaption>
-					</figure>`;
+	const element = document.createElement('figure');
+	element.classList.add('profile');
+	element.innerHTML = `<img class="profile-img" src="${profile.img}" alt="тварина">
+											<figcaption class="profile-caption">
+													<h5 class="profile-heading">${profile.petName}</h5>
+													<p class="profile-txt">
+															Порода- ${profile.breed}. 
+															Вік- ${profile.age} років. 
+															Контактна персона - ${profile.userName}. 
+															${profile.description}
+													</p>
+											</figcaption>`
+	return element;
+}
+
+function getBase64(file) {
+	const reader = new FileReader();
+
+	reader.readAsDataURL(file);
+	return new Promise((resolve, reject) => {
+		reader.onload = function () {
+			resolve(reader.result);
+		}
+		reader.onerror = function (error) {
+			reject(error);
+		};
+	});
+
 }

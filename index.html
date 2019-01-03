@@ -268,10 +268,10 @@
                 <form class="new-profile-form">
                     <fieldset>
                         <legend>Тваринка</legend>
-                        <input type="text" placeholder="Ім'я" class="new-profile-input" name="petName">
-                        <input type="text" placeholder="Порода" class="new-profile-input" name="breed">
+                        <input type="text" placeholder="Ім'я" class="new-profile-input" name="petName" required>
+                        <input type="text" placeholder="Порода" class="new-profile-input" name="breed" required>
                         <input type="number" placeholder="Вік" class="new-profile-input" name="age">
-                        <input type="file" accept="image/*" name="img" class="new-profile-input">
+                        <input type="file" accept="image/*" name="img" class="new-profile-input" required>
                         <div class="input-wrapper">
                             <div class="radio-wrapper">
                                 <label class="new-profile-radio">Дівчика
@@ -290,13 +290,13 @@
                                 </label>
                             </div>
                         </div>
-                        <textarea name="description" placeholder="Напишіть кородкий опис тваринки та її історію" rows="10" class="new-profile-input new-profile-textarea"></textarea>
+                        <textarea required name="description" placeholder="Напишіть кородкий опис тваринки та її історію" rows="10" class="new-profile-input new-profile-textarea"></textarea>
                     </fieldset>
                     <fieldset>
                         <legend>Контактна особа</legend>
-                        <input type="text" placeholder="Ім'я" class="new-profile-input" name="userName">
-                        <input type="tel" class="new-profile-input" name="phone" placeholder="+(380)xx-xx-xx-xxx">
-                        <input type="text" list="city" class="new-profile-input" placeholder="Місто" name="city">
+                        <input type="text" placeholder="Ім'я" class="new-profile-input" name="userName" required>
+                        <input type="tel" class="new-profile-input" name="phone" placeholder="+(380)xx-xx-xx-xxx" required>
+                        <input type="text" list="city" class="new-profile-input" placeholder="Місто" name="city" required>
                         <datalist id="city">
                             <option value="Львів"></option>
                             <option value="Одеса"></option>
@@ -361,7 +361,7 @@
                 </button>
             </div>
         </div>
-        <small class="copyright">© Всі права захищено ELEKS kids, 2018 </small>
+        <small class="copyright">© Всі права захищено ELEKS teens, 2018 </small>
     </footer>
 </body>
 
