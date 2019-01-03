@@ -19,9 +19,9 @@ function onSubmit(e) {
 
 	const file = form.elements.img.files[0];
 	getBase64(file).then(
-    imgBase64 => addProfile(formVal, data, imgBase64),
-    error => console.error("Rejected: " + error)
-  );
+		imgBase64 => addProfile(formVal, data, imgBase64),
+		error => console.error("Rejected: " + error)
+	);
 	
 	this.reset();
 }
