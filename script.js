@@ -59,15 +59,15 @@ function createTemplate(profile) {
 	const element = document.createElement('figure');
 	element.classList.add('profile');
 	const template = `<img class="profile-img" src="${profile.img}" alt="тварина">
-										<figcaption class="profile-caption">
-												<h5 class="profile-heading">${profile.petName}</h5>
-												<p class="profile-txt">
-														Порода- ${profile.breed}. 
-														Вік- ${profile.age} років. 
-														Контактна персона - ${profile.userName}. 
-														${profile.description}
-												</p>
-										</figcaption>`;
+									<figcaption class="profile-caption">
+										<h5 class="profile-heading">${profile.petName}</h5>
+										<p class="profile-txt">
+											Порода- ${profile.breed}. 
+											Вік- ${profile.age} років. 
+											Контактна персона - ${profile.userName}. 
+											${profile.description}
+										</p>
+									</figcaption>`;
 	element.innerHTML = template;
 	return element;
 }
